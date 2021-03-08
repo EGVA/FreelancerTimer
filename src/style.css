@@ -1,0 +1,57 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+body{
+    background-color: #242038;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#clock{
+    background-color: #8F77C8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 30vh;
+    border-radius: 50%;
+    box-shadow: 0px -1px 12px 0px rgba(0,0,0,0.75);
+    transition: height 1s, width 1s;
+}
+#clock:hover{
+    height: 31vh;
+    width: 31vh;
+}
+
+#clock-button{
+    background-color: #8F77C8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    width: 15vh;
+    border-radius: 50%;
+    box-shadow: 0px -1px 12px 0px rgba(0,0,0,0.75);
+    transition: height 1s, width 1s;
+    font-size: 20px;
+}
+#clock-button:hover{
+    height: 16vh;
+    width: 16vh;
+    cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
