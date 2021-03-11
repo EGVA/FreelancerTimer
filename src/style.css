@@ -1,6 +1,5 @@
 *{
     font-family: 'Roboto', sans-serif;
-    color: white;
     padding: 0;
     margin: 0;
     left: 0;
@@ -14,10 +13,17 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 50px;
+}
+#clock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-#clock{
-    background-color: #8F77C8;
+#clock-display{
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,14 +32,25 @@ body{
     border-radius: 50%;
     box-shadow: 0px -1px 12px 0px rgba(0,0,0,0.75);
     transition: height 1s, width 1s;
+    margin-bottom: 10px;
 }
-#clock:hover{
+#clock-display:hover{
     height: 31vh;
     width: 31vh;
 }
+.running{
+    background-color: #4392F1;
+}
+.paused{
+    background-color: #EF233C;
+}
+.stopped{
+    background-color: #D80032;
+}
 
-#clock-button{
-    background-color: #8F77C8;
+.clock-button{
+    color: white;
+    background-color: #2B2D42;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +61,7 @@ body{
     transition: height 1s, width 1s;
     font-size: 20px;
 }
-#clock-button:hover{
+.clock-button:hover{
     height: 16vh;
     width: 16vh;
     cursor: pointer;
@@ -55,3 +72,83 @@ body{
     flex-direction: row;
     gap: 5px;
 }
+
+.group 			  { 
+    position:relative; 
+    margin-bottom: 1px; 
+  }
+  input 				{
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:300px;
+    border:none;
+    border-bottom:1px solid #757575;
+    background: none;
+    color: white;
+  }
+  input:focus 		{ outline:none; }
+  
+  /* LABEL ======================================= */
+  label 				 {
+    color:#999; 
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all; 
+  }
+  
+  /* active state */
+  input:focus ~ label, input:valid ~ label 		{
+    top:-20px;
+    font-size:14px;
+    color:#5264AE;
+  }
+  
+  /* BOTTOM BARS ================================= */
+  .bar 	{ position:relative; display:block; width:300px; }
+  .bar:before, .bar:after 	{
+    content:'';
+    height:2px; 
+    width:0;
+    bottom:1px; 
+    position:absolute;
+    background:#5264AE; 
+    transition:0.2s ease all; 
+  }
+  .bar:before {
+    left:50%;
+  }
+  .bar:after {
+    right:50%; 
+  }
+  
+  /* active state */
+  input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+  }
+  
+  /* HIGHLIGHTER ================================== */
+  .highlight {
+    position:absolute;
+    height:60%; 
+    width:100px; 
+    top:25%; 
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+  }
+  
+  /* active state */
+  input:focus ~ .highlight {
+    animation:inputHighlighter 0.3s ease;
+  }
+  
+  /* ANIMATIONS ================ */
+  @keyframes inputHighlighter {
+      from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }

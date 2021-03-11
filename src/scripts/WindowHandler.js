@@ -11,7 +11,7 @@ async function getActiveWindow(log) {
             if(log){console.log(err);}
             return {app: null, title: null}
         }
-    }, -1)    
+    }, 1)    
 }
 
 export {getActiveWindow}
